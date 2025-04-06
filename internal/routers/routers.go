@@ -10,9 +10,11 @@ import (
 func NewRouter() *gin.Engine {
 	r := gin.Default()
 
-	// In this way we know Pong belongs to NewPongController.
-	// This is why PongController struct{} is useful.
-	r.GET("/ping", c.NewPongController().Pong)
+	v1 := r.Group("v1/2025")
+	{
+		// v1/2025/user/1
+		v1.GET("/user/1", c.NewUserController().GetUserbyID)
+	}
 
 	return r
 }
