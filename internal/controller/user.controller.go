@@ -1,14 +1,11 @@
 package controller
 
 import (
-	"net/http"
-
 	"github.com/alanbui/train-ticket/internal/service"
+	"github.com/alanbui/train-ticket/package/response"
 	"github.com/gin-gonic/gin"
 )
 
-// Controller => Service => Repo
-// Repo => Models => DB
 type UserController struct {
 	userService *service.UserService
 }
@@ -19,9 +16,9 @@ func NewUserController() *UserController {
 	}
 }
 
+// Controller => Service => Repo
+// Repo => Models => DB
+
 func (uc *UserController) GetUserbyID(ctx *gin.Context) {
-	ctx.JSON(http.StatusOK, gin.H{ // map of strings
-		"message": uc.userService.GetUserInfoService(),
-		"users":   []string{"Faker", "Chovy"},
-	})
+	response.SuccessResponse(ctx, 20001, []string{"Faker", "Chovy"})
 }

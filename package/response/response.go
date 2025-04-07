@@ -1,5 +1,11 @@
 package response
 
+import (
+	"net/http"
+
+	"github.com/gin-gonic/gin"
+)
+
 type ResponseData struct {
 	/*
 		It tells the Go encoding/json package to map the struct field Code to the JSON key "code" during:
@@ -13,4 +19,14 @@ type ResponseData struct {
 	Code    int         `json:"code"`
 	Message string      `json:"message"`
 	Data    interface{} `json:"data"`
+}
+
+// success response
+func SuccessResponse(c *gin.Context, code int, data interface{}) {
+	c.JSON(http.StatusOK, ResponseData{
+		Code: code,
+		// msg can be accessed as long as it's in the same package
+		Message: msg[code],
+		Data:    nil,
+	})
 }
