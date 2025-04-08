@@ -31,7 +31,7 @@ func SuccessResponse(c *gin.Context, code int, data interface{}) {
 	})
 }
 
-func FailureResponse(c *gin.Context, code int, message string) {
+func ErrorResponse(c *gin.Context, code int, message string) {
 	c.JSON(http.StatusOK, ResponseData{
 		Code: code,
 		// msg can be accessed as long as it's in the same package
