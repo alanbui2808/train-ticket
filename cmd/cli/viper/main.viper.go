@@ -14,10 +14,10 @@ type Config struct {
 		// tell Viper to map to server in yaml file
 	} `mapstructure:"server"` // Viper maps to server
 	Databases []struct {
-		User     string `mapstructure:"user"`
+		User     string `mapstructure:"user"` // maps to databases.user
 		Password string `mapstructure:"password"`
 		Host     string `mapstructure:"host"`
-	} `mapstructure:"databases"` // map to database
+	} `mapstructure:"databases"` // map to databases
 }
 
 func main() {
