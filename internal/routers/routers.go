@@ -5,6 +5,7 @@ import (
 	"fmt"
 
 	c "github.com/alanbui/train-ticket/internal/controller"
+	"github.com/alanbui/train-ticket/internal/middlewares"
 	"github.com/gin-gonic/gin"
 )
 
@@ -43,7 +44,7 @@ func NewRouter() *gin.Engine {
 		After BB
 		After AA
 	*/
-	r.Use(AA(), BB(), CC)
+	r.Use(middlewares.AuthenMiddleware(), BB(), CC)
 	v1 := r.Group("v1/2025")
 	{
 		// v1/2025/user/1
