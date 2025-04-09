@@ -12,15 +12,15 @@ Welcome to my backend API project for an e-commerce platform that allows users t
 
 ## 🛠️ Technologies Used
 
-- 🧠 **Go (Golang)** — Simple, fast, and highly concurrent
-- 🌐 **Gin** — Lightweight HTTP web framework for building RESTful APIs
-- 🗃️ **GORM** — ORM library for seamless database interactions
-- 🐘 **PostgreSQL** — Robust, open-source relational database
-- 🐳 **Docker** — For containerization and consistent deployments
-- 🔐 **JWT Authentication** — Secure token-based user sessions
-- 🛡️ **Role-Based Authorization** — Fine-grained access control
-- ⚙️ **Middleware** — Logging, error handling, and request validation
-- ✅ **Unit & Integration Testing** — Ensuring reliability and code quality
+- 🧠 **Go (Golang)** — Core language for backend development  
+- 🌐 **Gin** — HTTP web framework for building APIs  
+- 🗃️ **GORM** — ORM for interacting with MySQL  
+- 🐬 **MySQL** — Relational database  
+- 🐳 **Docker** — Containerization for development & deployment  
+- 🔐 **JWT** — Token-based user authentication  
+- 🛡️ **RBAC** — Role-based access control  
+- ⚙️ **Middleware** — Logging, error handling, validation  
+- ✅ **Testing** — Unit and integration tests
 
 ---
 
