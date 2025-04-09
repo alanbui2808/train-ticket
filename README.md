@@ -1,5 +1,11 @@
 # 🚄 E-commerce Train Ticket Booking API (Go)
 
+```
+======================================================
+|        🛠️🛠️🛠️ PROJECT IS STILL ONGOING 🛠️🛠️🛠️         |
+======================================================
+```
+
 Welcome to my backend API project for an e-commerce platform that allows users to book train tickets. This project is built with **Go** and follows modern backend development practices, with a strong focus on scalability, maintainability, and clean architecture.
 
 ---
