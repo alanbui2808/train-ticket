@@ -6,8 +6,8 @@ import (
 )
 
 var (
-	Config setting.Config
-	Logger *logger.LoggerZap
+	Config setting.Config    // stores all the config
+	Logger *logger.LoggerZap // global logger
 )
 
 /*

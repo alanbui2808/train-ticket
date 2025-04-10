@@ -6,5 +6,6 @@ import (
 )
 
 func InitLogger() {
+	// initialize global Logger to a custom Logger that we defined.
 	global.Logger = logger.NewLogger(global.Config.Logger)
 }
