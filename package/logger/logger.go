@@ -9,6 +9,7 @@ import (
 	"go.uber.org/zap/zapcore"
 )
 
+// wrap zap.Logger (now with Lumberjack) inside
 type LoggerZap struct {
 	*zap.Logger
 }
@@ -39,7 +40,7 @@ func NewLogger(config setting.LoggerSetting) *LoggerZap {
 		MaxAge:     config.Max_age,  // days
 		Compress:   config.Compress, // disabled by default
 	}
-	// defines the actual logging logic
+	// defines the actual logging logic using Lumberjack.Logger
 	core := zapcore.NewCore(
 		encoder,
 		zapcore.NewMultiWriteSyncer(zapcore.AddSync(os.Stdout), zapcore.AddSync(&hook)),
