@@ -28,4 +28,22 @@ func InitRedis() {
 
 	fmt.Println("Initializing Redis successfully!")
 	global.Rdb = rdb
+	redisExample()
+}
+
+// test Redis connection
+func redisExample() {
+	err := global.Rdb.Set(ctx, "score", 100, 0).Err()
+	if err != nil {
+		fmt.Println("Error redis setting:", zap.Error(err))
+		return
+	}
+
+	value, err := global.Rdb.Get(ctx, "score").Result()
+	if err != nil {
+		fmt.Println("Error redis setting:", zap.Error(err))
+		return
+	}
+
+	global.Logger.Info("value score is::", zap.String("score", value))
 }
