@@ -14,6 +14,7 @@ type LoggerZap struct {
 	*zap.Logger
 }
 
+// create a custom zap.Logger named LoggerZap using Lumberjack
 func NewLogger(config setting.LoggerSetting) *LoggerZap {
 	encoder := getEncoderLog() // defines how the log is formatted
 
@@ -33,6 +34,7 @@ func NewLogger(config setting.LoggerSetting) *LoggerZap {
 		level = zapcore.InfoLevel
 	}
 
+	// loads the logger config
 	hook := lumberjack.Logger{
 		Filename:   config.File_log_name,
 		MaxSize:    config.Max_size,
@@ -40,6 +42,7 @@ func NewLogger(config setting.LoggerSetting) *LoggerZap {
 		MaxAge:     config.Max_age,  // days
 		Compress:   config.Compress, // disabled by default
 	}
+
 	// defines the actual logging logic using Lumberjack.Logger
 	core := zapcore.NewCore(
 		encoder,
