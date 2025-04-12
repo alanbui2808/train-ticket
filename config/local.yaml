@@ -16,3 +16,10 @@ logger:
   max_age:     7   # days
   max_size:    1024
   compress:   true # disabled by default
+redis:
+  host: 127.0.0.1
+  port: 6379
+  password: 
+  database: 0
+  pool_size: 10
+
