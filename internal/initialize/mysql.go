@@ -5,6 +5,7 @@ import (
 	"time"
 
 	"github.com/alanbui/train-ticket/global"
+	"github.com/alanbui/train-ticket/internal/po"
 	"go.uber.org/zap"
 	"gorm.io/driver/mysql"
 	"gorm.io/gorm"
@@ -43,6 +44,7 @@ func InitMySql() {
 
 	// Set Pool
 	SetPool()
+	migrateTables()
 }
 
 // Connect to Pooling settings
@@ -64,4 +66,11 @@ func SetPool() {
 // Create a table in MySQL
 func migrateTables() {
 	// private function
+	err := global.Mdb.AutoMigrate(
+		&po.User{},
+		&po.Role{},
+	)
+	if err != nil {
+		fmt.Println("Migrating tables error:", err)
+	}
 }
