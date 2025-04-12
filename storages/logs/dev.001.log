@@ -1,3 +1,8 @@
 {"level":"INFO","time":"2025-04-10T00:55:27.053-0500","caller":"initialize/run.go:17","msg":"Config Log ok!!","ok":"success"}
 {"level":"INFO","time":"2025-04-11T20:18:20.498-0500","caller":"initialize/run.go:17","msg":"Config Log ok!!","ok":"success"}
 {"level":"INFO","time":"2025-04-11T20:18:20.508-0500","caller":"initialize/mysql.go:42","msg":"Initializing MySQL successfully!"}
+{"level":"INFO","time":"2025-04-12T18:00:48.529-0500","caller":"initialize/run.go:17","msg":"Config Log ok!!","ok":"success"}
+{"level":"INFO","time":"2025-04-12T18:00:48.692-0500","caller":"initialize/mysql.go:42","msg":"Initializing MySQL successfully!"}
+{"level":"ERROR","time":"2025-04-12T18:00:49.281-0500","caller":"initialize/redis.go:26","msg":"Init Redis error!","error":"dial tcp: address 127:0.0.1:6379: too many colons in address"}
+{"level":"INFO","time":"2025-04-12T18:03:32.458-0500","caller":"initialize/run.go:17","msg":"Config Log ok!!","ok":"success"}
+{"level":"INFO","time":"2025-04-12T18:03:32.462-0500","caller":"initialize/mysql.go:42","msg":"Initializing MySQL successfully!"}
