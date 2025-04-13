@@ -2,55 +2,44 @@ package initialize
 
 // route the requests to correct APIs
 import (
-	"fmt"
-
-	c "github.com/alanbui/train-ticket/internal/controller"
-	"github.com/alanbui/train-ticket/internal/middlewares"
+	"github.com/alanbui/train-ticket/global"
+	"github.com/alanbui/train-ticket/internal/routers"
 	"github.com/gin-gonic/gin"
 )
 
-func AA() gin.HandlerFunc {
-	return func(c *gin.Context) {
-		fmt.Println("Before ==> AA")
-		c.Next() // continue to next Handler
-		fmt.Println("Alfter ==> AA")
-	}
-}
-
-func BB() gin.HandlerFunc {
-	return func(c *gin.Context) {
-		fmt.Println("Before ==> BB")
-		c.Next() // continue to next Handler
-		fmt.Println("Alfter ==> BB")
-	}
-}
-
-func CC(c *gin.Context) {
-	fmt.Println("Before ==> CC")
-	c.Next() // continue to next Handler
-	fmt.Println("Alfter ==> CC")
-}
-
 // must have capital letter so that main can acess.
 func InitRouter() *gin.Engine {
-	r := gin.Default()
-	// use the middleware
-	/*
-		Before AA
-		Before BB
-		Before CC
-		--> Handler!
-		After CC
-		After BB
-		After AA
-	*/
-	r.Use(middlewares.AuthenMiddleware(), BB(), CC)
-	v1 := r.Group("v1/2025")
+	var r *gin.Engine
+
+	// set the respective server mode
+	if global.Config.Server.Mode == "dev" {
+		gin.SetMode(gin.DebugMode)
+		gin.ForceConsoleColor()
+		r = gin.Default()
+	} else {
+		gin.SetMode(gin.ReleaseMode)
+		r = gin.New()
+	}
+
+	// middlewares
+	managerRouter := routers.RouterGroupApp.Manager
+	userRouter := routers.RouterGroupApp.User
+
+	MainGroup := r.Group("v1/2025")
 	{
-		// v1/2025/user/1
-		v1.GET("ping", c.NewPongController().Pong) // v1/2025/ping
-		v1.GET("/user/1", c.NewUserController().GetUserbyID)
+		MainGroup.GET("/checkStatus") // monitor status
+	}
+	// set groupings for user router
+	{
+		userRouter.InitUserRouter(MainGroup)
+		userRouter.InitProductRouter(MainGroup)
+	}
+	// set groupings for manager router
+	{
+		managerRouter.InitUserRouter(MainGroup)
+		managerRouter.InitAdminRouter(MainGroup)
 	}
 
 	return r
+
 }
