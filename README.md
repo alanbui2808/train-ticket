@@ -2,7 +2,7 @@
 
 ```
 ======================================================
-|        🛠️🛠️🛠️ PROJECT IS STILL ONGOING 🛠️🛠️🛠️      |
+|        🛠️🛠️🛠️ PROJECT IS STILL ONGOING 🛠️🛠️🛠️        |
 ======================================================
 ```
 
@@ -16,7 +16,9 @@ Welcome to my backend API project for an e-commerce platform that allows users t
 - 🌐 **Gin** — HTTP web framework for building APIs  
 - 🗃️ **GORM** — ORM for interacting with MySQL  
 - 🐬 **MySQL** — Relational database  
-- 🐳 **Docker** — Containerization for development & deployment  
+- 🐳 **Docker** — Containerization for development & deployment
+- 🗄️ **Redis** — In-memory data store for caching and sessions  
+- 📩 **Kafka** — Distributed event streaming for asynchronous communication    
 - 🔐 **JWT** — Token-based user authentication  
 - 🛡️ **RBAC** — Role-based access control  
 - ⚙️ **Middleware** — Logging, error handling, validation  
