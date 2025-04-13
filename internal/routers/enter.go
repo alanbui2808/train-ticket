@@ -9,3 +9,6 @@ type RouterGroup struct {
 	User    user.UserRouterGroup
 	Manager manager.ManagerRouterGroup
 }
+
+// allocates and returns a pointer to this zeroed struct
+var RouterGroupApp = new(RouterGroup) // &RouterGroup{}
