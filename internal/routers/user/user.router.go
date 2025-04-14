@@ -13,8 +13,8 @@ func (pr *UserRouter) InitUserRouter(Router *gin.RouterGroup) {
 	// public routers
 	userRouterPublic := Router.Group("/user")
 	{
-		userRouterPublic.GET("/register")
-		userRouterPublic.GET("/otp")
+		userRouterPublic.POST("/register")
+		userRouterPublic.POST("/otp")
 	}
 
 	// private routers (requires login)
