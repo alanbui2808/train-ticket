@@ -1,19 +1,27 @@
 package user
 
-import "github.com/gin-gonic/gin"
+import (
+	"github.com/alanbui/train-ticket/internal/wire"
+	"github.com/gin-gonic/gin"
+)
 
 type UserRouter struct{}
 
 /*
 user/user.router.go
-Purpose: Actual end-user self-service routes. For users activing on themselves (register, get info, etc)
+Purpose: Actual end-user self-service routes.
+For users activing on themselves (register, get info, etc)
+
 Access: Can have public routes (e.g onboarding or verification) and some private required login
 */
 func (pr *UserRouter) InitUserRouter(Router *gin.RouterGroup) {
+	// dependency injection
+	userController, _ := wire.InitUserRouterHandler()
+
 	// public routers
 	userRouterPublic := Router.Group("/user")
 	{
-		userRouterPublic.POST("/register")
+		userRouterPublic.POST("/register", userController.Register)
 		userRouterPublic.POST("/otp")
 	}
 
