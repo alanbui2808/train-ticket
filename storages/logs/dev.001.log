@@ -9,3 +9,6 @@
 {"level":"INFO","time":"2025-04-12T18:09:46.400-0500","caller":"initialize/run.go:17","msg":"Config Log ok!!","ok":"success"}
 {"level":"INFO","time":"2025-04-12T18:09:46.407-0500","caller":"initialize/mysql.go:42","msg":"Initializing MySQL successfully!"}
 {"level":"INFO","time":"2025-04-12T18:09:46.595-0500","caller":"initialize/redis.go:48","msg":"value score is::","score":"100"}
+{"level":"INFO","time":"2025-04-25T00:31:32.270-0500","caller":"initialize/run.go:17","msg":"Config Log ok!!","ok":"success"}
+{"level":"INFO","time":"2025-04-25T00:31:32.277-0500","caller":"initialize/mysql.go:43","msg":"Initializing MySQL successfully!"}
+{"level":"ERROR","time":"2025-04-25T00:31:32.436-0500","caller":"initialize/redis.go:26","msg":"Init Redis error!","error":"dial tcp 127.0.0.1:6379: connect: connection refused"}
