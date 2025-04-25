@@ -23,6 +23,6 @@ func (pr *UserRouter) InitUserRouter(Router *gin.RouterGroup) {
 	// userRouterPrivate.Use(Authen())
 	// userRouterPrivate.Use(Permission())
 	{
-		userRouterPrivate.POST("/active_user") // manage users
+		userRouterPrivate.POST("/active_user_") // manage users
 	}
 }
