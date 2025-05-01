@@ -26,16 +26,6 @@ func InitMySql() {
 	s := fmt.Sprintf(dsn, m.Username, m.Password, m.Host, m.Port, m.DBname)
 
 	db, err := gorm.Open(mysql.Open(s), &gorm.Config{
-		/*
-			SkipDefaultTransaction: false
-				1. Every CREATE, UPDATE, DELETE will be wrapped in a database transaction.
-				2. Adds safety ensuring:
-					- If fails during operation, the whole transaction is rolled back.
-					- Atomic behavior out of the box
-
-				Downsides: Little overhead => reduce latency.
-
-		*/
 		SkipDefaultTransaction: false,
 	})
 	checkErrorPanic(err, "InitMySql initialization error!")
@@ -45,7 +35,7 @@ func InitMySql() {
 
 	// Set Pool
 	SetPool()
-	genTableDAO()
+	// genTableDAO()
 	// migrateTables()
 }
 
