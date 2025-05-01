@@ -72,6 +72,8 @@ docker-compose up -d
 
 - Starts `mysql_container` and `redis_container`
 - Loads schema from `shopdevgo.sql` if volume is fresh
+  
+![Screenshot 2025-05-01 at 5 58 53 PM](https://github.com/user-attachments/assets/17fd0523-2eab-4ea1-872a-7ac6220190ef)
 
 ### 🏗️ Build & Run the App
 
