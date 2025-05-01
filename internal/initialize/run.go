@@ -20,5 +20,5 @@ func Run() {
 
 	r := InitRouter()
 
-	r.Run()
+	r.Run() // 8080
 }
