@@ -60,7 +60,7 @@ This project uses **Docker** to containerize the backend and **Docker Compose** 
 │   └── local.yaml          # App configuration
 ├── migrations/
 │   └── shopdevgo.sql       # MySQL schema (executed at first container run)
-├── docker-compose.yml      # MySQL + Redis
+├── docker-compose.yaml      # MySQL + Redis
 ├── Dockerfile              # Go backend build
 ```
 
