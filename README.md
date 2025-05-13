@@ -8,6 +8,7 @@
 
 Welcome to my backend API project for an e-commerce platform that allows users to book train tickets. This project is built with **Go** and follows modern backend development practices, with a strong focus on scalability, maintainability, and clean architecture.
 
+By the end of this project, we aim to simulate a real-world train ticket booking service, demonstrating that our backend APIs can handle high volumes of requests efficiently and reliably.
 ---
 
 ## 🛠️ Technologies Used
